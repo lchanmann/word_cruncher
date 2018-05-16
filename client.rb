@@ -1,9 +1,9 @@
 #!/usr/bin/env ruby -I lib
 
 require 'word_cruncher'
-require 'strategy'
+require 'output_strategy'
 
-strategy = Strategy::File.new
+strategy = OutputStrategy::File.new
 sequences_file = strategy.create 'sequences'
 words_file = strategy.create 'words'
 dict = File.new 'dictionary.txt'

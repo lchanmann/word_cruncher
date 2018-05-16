@@ -1,13 +1,13 @@
-require 'strategy'
+require 'output_strategy'
 
-RSpec.describe Strategy do
+RSpec.describe OutputStrategy do
   let(:filename) { '.testing' }
-  let(:strategy) { Strategy::File.new }
+  let(:strategy) { OutputStrategy::File.new }
 
   subject { strategy.create filename }
 
   context 'when use array strategy' do
-    let(:strategy) { Strategy::Array.new }
+    let(:strategy) { OutputStrategy::Array.new }
 
     it "should create array instance" do
       is_expected.to be_a Array
@@ -30,7 +30,7 @@ RSpec.describe Strategy do
   end
 
   context 'when use tempfile strategy' do
-    let(:strategy) { Strategy::Tempfile.new }
+    let(:strategy) { OutputStrategy::Tempfile.new }
 
     after do
       subject.close

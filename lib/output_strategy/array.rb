@@ -1,4 +1,4 @@
-class Strategy::Array
+class OutputStrategy::Array
   class Array < ::Array
     # expect +puts+, +path+ and +close+ methods
     alias_method :puts, :push

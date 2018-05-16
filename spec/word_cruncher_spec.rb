@@ -1,8 +1,8 @@
 require 'word_cruncher'
-require 'strategy'
+require 'output_strategy'
 
 RSpec.describe WordCruncher do
-  let(:strategy) { Strategy::Array.new }
+  let(:strategy) { OutputStrategy::Array.new }
   let(:sequences) { strategy.create 'sequences' }
   let(:words) { strategy.create 'words' }
 
