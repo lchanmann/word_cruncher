@@ -12,7 +12,7 @@ class WordCruncher
   def process(dict)
     # store data in hash with sequence as key and words having such sequence as its value
     # eg. data = { "arro" => ["arrows", "carrots"] }
-    data = Hash.new { |h,k| h[k] = Array.new }
+    data = Hash.new { |h,k| h[k] = [] }
     dict.each do |word|
       word.chomp!
       # skip shorter words
@@ -22,15 +22,15 @@ class WordCruncher
         data[s] << word
       end
     end
-    write_data data
+    write_data(data)
   end
 
   private
   def write_data(data)
     data.each do |k, v|
       if v.size == 1
-        @sequences.puts k
-        @words.puts v.first
+        @sequences.puts(k)
+        @words.puts(v.first)
       end
     end
   end

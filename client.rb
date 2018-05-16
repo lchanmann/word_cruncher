@@ -4,12 +4,12 @@ require 'word_cruncher'
 require 'output_strategy'
 
 strategy = OutputStrategy::File.new
-sequences_file = strategy.create 'sequences'
-words_file = strategy.create 'words'
-dict = File.new 'dictionary.txt'
+sequences_file = strategy.create('sequences')
+words_file = strategy.create('words')
+dict = File.new('dictionary.txt')
 
-client = WordCruncher.new sequences_file, words_file
-client.process dict
+client = WordCruncher.new(sequences_file, words_file)
+client.process(dict)
 
 # close files
 sequences_file.close

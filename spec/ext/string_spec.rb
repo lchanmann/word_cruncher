@@ -9,8 +9,8 @@ RSpec.describe String do
   it "should generate a list of n-character sequences" do
     generator = subject.each_cons(n)
 
-    expect(generator.next).to eq subject[0, n]
-    expect(generator.next).to eq subject[1, n]
-    expect(generator.next).to eq subject[2, n]
+    expect(generator.next).to eq(subject[0, n])
+    expect(generator.next).to eq(subject[1, n])
+    expect(generator.next).to eq(subject[2, n])
   end
 end
