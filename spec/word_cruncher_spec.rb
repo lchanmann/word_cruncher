@@ -1,4 +1,5 @@
 require 'word_cruncher'
+require 'strategy'
 
 RSpec.describe WordCruncher do
   let(:strategy) { Strategy::Tempfile.new }
@@ -77,8 +78,12 @@ RSpec.describe WordCruncher do
         end
       end
 
-      context 'when having duplicate sequences across words' do
-        let(:dict) { %w(arrows carrots give me) }
+      context 'when dictionary has duplicate sequences across words' do
+        let(:dict) { File.new 'spec/support/dictionary.txt' }
+
+        after do
+          dict.close
+        end
 
         it "should not include the sequences" do
           expect(s_content).not_to include "arro"

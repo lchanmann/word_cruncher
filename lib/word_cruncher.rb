@@ -1,4 +1,3 @@
-require 'strategy'
 require 'ext/string'
 
 class WordCruncher
@@ -15,6 +14,7 @@ class WordCruncher
     # eg. data = { "arro" => ["arrows", "carrots"] }
     data = Hash.new { |h,k| h[k] = Array.new }
     dict.each do |word|
+      word.chomp!
       # skip shorter words
       next if word.length < @s_length
 
