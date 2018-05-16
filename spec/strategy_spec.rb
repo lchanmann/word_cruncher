@@ -6,6 +6,18 @@ RSpec.describe Strategy do
 
   subject { strategy.create filename }
 
+  context 'when use array strategy' do
+    let(:strategy) { Strategy::Array.new }
+
+    it "should create array instance" do
+      is_expected.to be_a Array
+    end
+
+    it { is_expected.to respond_to(:puts) }
+    it { is_expected.to respond_to(:path) }
+    it { is_expected.to respond_to(:close) }
+  end
+
   context 'when use file strategy' do
     after do
       subject.close

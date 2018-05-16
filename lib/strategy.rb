@@ -1,4 +1,5 @@
 module Strategy
-  autoload :Tempfile  , 'strategy/tempfile'
+  autoload :Array     , 'strategy/array'
   autoload :File      , 'strategy/file'
+  autoload :Tempfile  , 'strategy/tempfile'
 end
